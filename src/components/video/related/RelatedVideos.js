@@ -3,13 +3,12 @@ import Error from "../../ui/Error";
 import RelatedVideoLoader from "../../ui/loaders/RelatedVideoLoader";
 import RelatedVideo from "./RelatedVideo";
 
-export default function RelatedVideos({ video }) {
-  const { id, title } = video;
+export default function RelatedVideos({ id, title }) {
   const {
     data: relatedVideos,
     isLoading,
     isError,
-  } = useGetRelatedVideosQuery(id, title);
+  } = useGetRelatedVideosQuery({ id, title });
 
   let content = null;
 
